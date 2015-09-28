@@ -19,7 +19,7 @@ function clickSearch() {
   document.body.appendChild(script);
   document.getElementById("nav-tab").style.display = "block";
 
-  clicked = true
+  clicked = true;
 
   request.open("GET", url);
   request.send();
@@ -29,12 +29,12 @@ function displayData(response){
   var oldInsta = document.getElementsByClassName("instaphotos");
   var arrphotos = [];
 
-  for (index = oldInsta.length - 1; index >= 0; index--) {
+  for (var index = oldInsta.length - 1; index >= 0; index--) {
       oldInsta[index].parentNode.removeChild(oldInsta[index]);
     }
   // for loop is accessing nested photo urls and pushing into array
   for(var i = 0; i<9;i++){
-    arrphotos.push(response['data'][i]['images']['low_resolution']['url']);
+    arrphotos.push(response.data[i].images.low_resolution.url);
   }
   // for loop is creating an 'img' element for each array element,
   // specifying a source and class for them, then appending them to the body
@@ -56,12 +56,12 @@ request.onreadystatechange = function (){
     var JSONfile = JSON.parse(request.responseText).response.results;
     displayResultsFunction(JSONfile);
   }
-}
+};
 
 // function for loops and fills in nested divs in the same way as instagram photo divs
 function displayResultsFunction(arr) {
   var oldGuard = document.getElementsByClassName("guardArticle");
-    for (index = oldGuard.length - 1; index >= 0; index--) {
+    for (var index = oldGuard.length - 1; index >= 0; index--) {
       oldGuard[index].parentNode.removeChild(oldGuard[index]);
     }
   for(var i = 0 ; i < 5 ; i++){
