@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/RachBLondon/lxnews/badges/gpa.svg)](https://codeclimate.com/github/RachBLondon/lxnews)
 # LX News
 
 Link [here](http://liberty-x.github.io/lxnews/). Based on mobile-first design- don't be scared when it doesn't look great on desktop! 
